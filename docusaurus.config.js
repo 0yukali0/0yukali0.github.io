@@ -14,6 +14,7 @@ const config = {
   baseUrl: '/',
   projectName: "0YUKALI0@GITHUB",
   organizationName: '0YUKALI0',
+  deploymentBranch: "gh-pages",
   trailingSlash: false,
 
   onBrokenLinks: 'throw',
