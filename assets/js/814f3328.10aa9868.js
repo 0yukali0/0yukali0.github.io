@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunk_0yukali0=self.webpackChunk_0yukali0||[]).push([[535],{5641:e=>{e.exports=JSON.parse('{"title":"Recent posts","items":[{"title":"About yuteng chen","permalink":"/blog/2023/05/13/info-blog-post"}]}')}}]);
