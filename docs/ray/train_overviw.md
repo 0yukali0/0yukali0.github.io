@@ -17,10 +17,9 @@ def train_func():
 
 ## Worker
 每個worker含有training function內容並執行。
-Scaling configuration設定worker總數，各個worker資源使用
 
 ### Scaling configuration
-
+Scaling configuration設定worker總數，各個worker資源使用
 ```python
 from ray.train import ScalingConfig
 
@@ -28,6 +27,7 @@ scaling_config = ScalingConfig(num_worker=2, use_GPU=False)
 ```
 
 ## Trainer
+`Ray Trainer`依據提供之`training_func`與`scaling configuration`構出相應數量的worker，執行`training function`。
 
 ```
 from ray.train.torch import TorchTrainer
