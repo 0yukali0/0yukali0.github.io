@@ -91,7 +91,7 @@ result = train.fit()
 | error | result.error | 訓練失敗資訊回報 |
 
 ## Pytorch lightning
-```
+```python
 import torch
 import torch.utils.data import DataLoader
 from torch.nn import CrossEntropyLoss
@@ -157,6 +157,88 @@ result = trainer.fit()
 
 ```
 ## Hugging Face Transformers
+```python
+import numpy as np
+import evaluate
+from datasets import load_dataset
+from transformers import (
+    Trainer,
+    TrainingArguments,
+    AutoTokenizer,
+    AutoModelForSequenceClassification,
+)
+
+# Encapsulate the data processing and prepare the basic huggingface model.
+def general_train():
+    dataset = load_dataset("yelp_review_full")
+    tokenizer = AutoTokenizer.from_pretrained("bert-base-cased")
+
+    def tokenize_function(examples):
+        return tokenizer(examples["text"], padding="max_length", truncation=True)
+
+    small_train_dataset = dataset["train"].select(range(1000)).map(
+        tokenize_function,
+        batch=True,
+    )
+    small_eval_dataset = dataset["test"].select(range(1000)).map(
+        tokenize_function,
+        batch=True,
+    )
+
+    # Model
+    model = AutoModelForSequenceClassification.from_pretrained(
+        "bert-base-cased",
+        num_labels=5
+    )
+
+    # Metrics
+    metric = evaluate.load("accuracy")
+
+    def compute_metrics(eval_pred):
+        logits, labels = eval_pred
+        predications = np.argmax(logits, axis=-1)
+        return metric.compute(
+	        predictions=predictions,
+	        references=labels
+        )
+
+    training_args = TrainingArguments(
+        output_dir="test_trainer",
+        evaluation_strategy="epoch",
+        report_to="none"
+    )
+
+    trainer = Trainer(
+        model=model,
+        args=trainging_args,
+        train_dataset=small_train_dataset,
+        eval_dataset=small_eval_dataset,
+        compute_metrics=compute_metrics,
+    )
+
+import ray.train.huggingface.transformers
+from ray.train. import ScalingConfig
+from ray.train.torch import TorchTrainer
+
+# Encapsulate the training and the evaluation after the model fits the ray config.
+def train_func(config):
+    trainer = general_train()
+    trainer.add_callback(
+        ray.train.huggingface..transformers.RayTrainReportCallback(),
+    )
+    trainer = ray.train.huggingface.transformers.prepare_trainer(trainer)
+
+    trainer.train()
+
+ray_trainer = TorchTrainer(
+    train_func,
+    scaling_config=ScalingConfig(
+        num_worker=4,
+        use_gpu=True,
+    )
+)
+ray_trainer.fit()
+```
 ## Hugging Face Accelerate
 
 ## DeepSpeed
