@@ -1,20 +1,20 @@
 ---
-id: datasciencelondon
-title: 倫敦科學資料判斷
+id: cancer
+title: 癌症細胞診斷
 ---
 
-# DataScienceLondon
+# Cancer
 
-## 資料來源
-
+## Kaggle URL
+***https://www.kaggle.com/datasets/erdemtaha/cancer-data/data***
 
 ## Pytorch程式
-
 ```python
 import torch
 from torch import nn
 from torch.utils.data import Dataset
 from torch.utils.data import DataLoader
+
 import pandas as pd
 
 class CustomDataset(Dataset):
@@ -25,19 +25,23 @@ class CustomDataset(Dataset):
         return len(self.labels)
     def __getitem__(self, idx):
         x = self.dataset.iloc[idx]
-        y = self.labels.iloc[idx, 0]
+        y = self.labels.iloc[idx]
         return torch.tensor(x.values).float(), torch.tensor([y]).float()
 
-def createTrainDataset():
-    train_x = pd.read_csv("train.csv")
-    train_y = pd.read_csv("trainLabels.csv")
-    return CustomDataset(x=train_x, y=train_y)
+def CreateDataset(path="Cancer_Data.csv"):
+    df = pd.read_csv(path)
+    df = df.loc[:, ~df.columns.str.contains('^Unnamed')]
+    x = df.iloc[: ,2:].astype("float")
+    df["diagnosis"] = df["diagnosis"].apply(lambda x: 1 if x == 'M' else 0)
+    y = df["diagnosis"].astype("int")
+    dataset = CustomDataset(x=x, y=y)
+    return dataset
 
 class NeuralNetwork(nn.Module):
     def __init__(self):
         super().__init__()
         self.linear_relu_stack = nn.Sequential(
-            nn.Linear(40, 40),
+            nn.Linear(30, 40),
             nn.ReLU(),
             nn.Linear(40, 40),
             nn.ReLU(),
@@ -58,15 +62,16 @@ def train(dataloader, model, criterion, optimizer):
             optimizer.step()
         print(f"epoch: {epoch}, loss: {loss.item()}")
 
+batch_size = 64
 device = (
     "cuda"
     if torch.cuda.is_available()
     else "cpu"
 )
-
 model = NeuralNetwork().to(device)
 criterion = nn.BCELoss()
 optimizer = torch.optim.SGD(model.parameters(), lr=1e-3)
-dataloader = DataLoader(createTrainDataset(), batch_size)
+dataset = CreateDataset()
+dataloader = DataLoader(dataset, batch_size)
 train(dataloader, model, criterion, optimizer)
 ```

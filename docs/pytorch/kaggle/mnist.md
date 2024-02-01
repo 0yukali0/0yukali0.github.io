@@ -1,7 +1,7 @@
 
 ---
 id: mnist
-title: MNIST
+title: MNIST衣物資料集判斷
 ---
 
 # MNIST
