@@ -8,7 +8,7 @@ title: DataScienceLondonWithRay
 使用`train.csv`與`trainLabels.csv`作為X與Y。
 ***https://www.kaggle.com/c/data-science-london-scikit-learn/data***
 
-'''python
+```python
 import torch
 from torch import nn
 from torch.utils.data import Dataset
@@ -67,4 +67,4 @@ criterion = nn.BCELoss()
 optimizer = torch.optim.SGD(model.parameters(), lr=1e-3)
 dataloader = DataLoader(createTrainDataset(), batch_size)
 train(dataloader, model, criterion, optimizer)
-'''
+```

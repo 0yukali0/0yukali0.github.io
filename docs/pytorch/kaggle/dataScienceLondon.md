@@ -10,7 +10,7 @@ title: DataScienceLondon
 
 ## Pytorch程式
 
-'''python
+```python
 import torch
 from torch import nn
 from torch.utils.data import DataLoader
@@ -119,4 +119,4 @@ for t in range(epochs):
     test(test_dataloader, model, loss_fn)
 
 print(model(test_dataloader.dataset.iloc[0]))
-'''
+```
