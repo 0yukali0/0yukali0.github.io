@@ -1,9 +1,9 @@
 ---
 id: datasciencelondonwithray
-title: DataScienceLondonWithRay
+title: Ray分散式訓練-DataScienceLondon
 ---
 
-# Ray使用案例:DataScienceLondon
+# DataScienceLondon
 ## 資料來源
 使用`train.csv`與`trainLabels.csv`作為X與Y。
 ***https://www.kaggle.com/c/data-science-london-scikit-learn/data***
