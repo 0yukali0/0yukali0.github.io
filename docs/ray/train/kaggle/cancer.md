@@ -57,6 +57,7 @@ class NeuralNetwork(nn.Module):
 def train(epoch, device, dataloader, model, criterion, optimizer):
     for epoch in range(epoch):
         for X, y in dataloader:
+            model.train()
             optimizer.zero_grad()
             X, y = X.to(device), y.to(device)
             pred = model(X)
