@@ -1,6 +1,6 @@
 ---
 id: buildhadoop
-title: hadoopCluster
+title: hadoop叢集建立
 ---
 
 # Hadoop 多節點安裝
@@ -10,9 +10,8 @@ title: hadoopCluster
 * 3節點(1主2奴，bridge)
 /etc/hosts如下
 ```script
-hadoop1 192.168.50.150
-hadoop2 192.168.50.151
-hadoop3 192.168.50.152
+master 192.168.50.170
+slave 192.168.50.171
 ```
 
 ## Java 8 安裝
@@ -36,8 +35,7 @@ sudo apt-get install openssh-server -y
 ssh-keygen -t rsa -P '' -f ~/.ssh/id_rsa
 cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys
 chmod 0600 ~/.ssh/authorized_keys
-ssh-copy-id -i ~/.ssh/authorized_keys hadoop2:/home/hadoop/.ssh/authorized_keys
-ssh-copy-id -i ~/.ssh/authorized_keys hadoop3:/home/hadoop/.ssh/authorized_keys
+ssh-copy-id -i ~/.ssh/authorized_keys slave:/home/hadoop/.ssh/authorized_keys #使用scp也可
 ```
 
 ## hadoop安裝
@@ -65,7 +63,6 @@ export HADOOP_MAPRED_HOME=${HADOOP_HOME}
 export HADOOP_COMMON_HOME=${HADOOP_HOME}
 export HADOOP_HDFS_HOME=${HADOOP_HOME}
 export YARN_HOME=${HADOOP_HOME}
-export PDSH_RCMD_TYPE=ssh
 ```
 
 套用設定
