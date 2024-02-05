@@ -18,15 +18,15 @@ hadoop3 192.168.50.152
 ## Java 8 安裝
 
 ```bash
-sudo apt install openjdk-8-jre-headless
-sudo apt install openjdk-8-jdk-headless
+sudo apt install openjdk-8-jre-headless -y
+sudo apt install openjdk-8-jdk-headless -y
 ```
 
 ## SSH 安裝
 
 ```bash
-sudo apt-get install ssh
-sudo apt-get install openssh-server
+sudo apt-get install ssh -y
+sudo apt-get install openssh-server -y
 ```
 
 ### 無密碼ssh等入設定
@@ -55,6 +55,9 @@ mv hadoop-3.3.6 hadoop
 ```script
 # HADOOP_HOME 以hadoop資料夾所在為主，我是放在hadoop家目錄。
 # 路徑為 /home/hadoop/
+export JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-amd64
+export PATH=$JAVA_HOME/bin:$PATH
+export HADOOP_CLASSPATH=${JAVA_HOME}/lib/tools.jar
 export HADOOP_HOME=/home/hadoop/hadoop
 export PATH=$PATH:$HADOOP_HOME/bin
 export PATH=$PATH:$HADOOP_HOME/sbin
@@ -83,7 +86,7 @@ export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
 <configuration>
     <property>
         <name>fs.defaultFS</name>
-        <value>hdfs://192.168.50.150:9000</value>
+        <value>hdfs://hadoop1:9000</value>
     </property>
 </configuration>
 ```
@@ -92,30 +95,21 @@ export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
 <configuration>
     <property>
         <name>dfs.replication</name>
-        <value>2</value>
-    </property>
-    <property>
-        <name>dfs.namenode.name.dir</name>
-        <value>file:///usr/local/hadoop/hdfs/data</value>
-    </property>
-    <property>
-        <name>dfs.datanode.data.dir</name>
-        <value>file:///usr/local/hadoop/hdfs/data</value>
+        <value>1</value>
     </property>
 </configuration>
 ```
 
 ### 更新yarn配置
 #### etc/hadoop/mapred-site.xml
+`mapreduce.application.classpath`值來至於`hadoop classpath`指令
 ```script
 <configuration>
     <property>
-        <name>mapreduce.jobtracker.address</name>
-        <value>192.168.50.150:54311</value>
-    </property>
-    <property>
         <name>mapreduce.framework.name</name>
         <value>yarn</value>
+        <name>mapreduce.application.classpath</name>
+        <value>/opt/hadoop/etc/hadoop:/opt/hadoop/share/hadoop/common/lib/*:/opt/hadoop/share/hadoop/common/*:/opt/hadoop/share/hadoop/hdfs:/opt/hadoop/share/hadoop/hdfs/lib/*:/opt/hadoop/share/hadoop/hdfs/*:/opt/hadoop/share/hadoop/mapreduce/*:/opt/hadoop/share/hadoop/yarn:/opt/hadoop/share/hadoop/yarn/lib/*:/opt/hadoop/share/hadoop/yarn/*:/usr/lib/jvm/java-1.8.0-openjdk-amd64/lib/tools.jar</value>
     </property>
 </configuration>
 ```
@@ -127,26 +121,15 @@ export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
         <name>yarn.nodemanager.aux-services</name>
         <value>mapreduce_shuffle</value>
     </property>
-    <property>
-        <name>yarn.nodemanager.aux-services.mapreduce.shuffle.class</name>
-        <value>org.apache.hadoop.mapred.ShuffleHandler</value>
-    </property>
-    <property>
-       <name>yarn.resourcemanager.hostname</name>
-       <value>192.168.50.150</value>
-    </property>
 </configuration>
 ```
 
 ## 設定主節點與子節點
 #### 更新 etc/hadoop/workers
 ```script
-192.168.50.151
-192.168.50.152
-```
-#### 增加 etc/hadoop/masters
-```script
-192.168.50.150
+hadoop1
+hadoop2
+hadoop3
 ```
 
 ## 複製hadoop資料夾於各子節點
