@@ -64,12 +64,12 @@ mkdir zookeeper/logs
 ## 每台主機myid建立
 主機1 master
 ```
-echo 0 >> zookeeper/data/myid
+echo 0 > zookeeper/data/myid
 ```
 
 主機2 slave
 ```
-echo 1 >> zookeeper/data/myid
+echo 1 > zookeeper/data/myid
 ```
 
 ## 複製zookeeper到每台主機

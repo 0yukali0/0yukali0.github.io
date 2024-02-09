@@ -74,7 +74,7 @@ source .bashrc
 ### hadoop的JAVA_HOME設定
 #### etc/hadoop/hadoop-env.sh
 ```script
-export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
+export JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-amd64
 ```
 
 ### 更新hdfs配置
