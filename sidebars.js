@@ -8,8 +8,8 @@ module.exports = {
       'hadoop_systems/zookeeper'
     ],
     'Machine Learning': [
-      'ML/devtools',
-      'ML/distributedframework'
+      'machinelearning/devtools',
+      'machinelearning/distributedframework'
     ]
   },
 };
