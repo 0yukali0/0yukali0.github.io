@@ -11,7 +11,7 @@ const config = {
   //favicon: 'img/favicon.ico',
 
   url: 'https://0yukali0.github.io',
-  baseUrl: '/',
+  baseUrl: '/blog/2024-02-13-info-blog-post',
   projectName: "0YUKALI0@GITHUB",
   organizationName: '0YUKALI0',
   deploymentBranch: "gh-pages",
