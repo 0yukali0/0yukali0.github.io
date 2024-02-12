@@ -26,7 +26,9 @@ module.exports = {
         type: 'category',
         label: 'Spark',
         items: [
-          'spark/buildspark'
+          'spark/pysspark',
+          'spark/rrd',
+          'spark/spark_mllib/linear_method'
         ]
       },
       {
