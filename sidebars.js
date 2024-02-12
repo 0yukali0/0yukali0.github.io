@@ -5,21 +5,21 @@ module.exports = {
         type: 'category',
         label: 'Hadoop',
         items: [
-          'hadoop/buildhadoop'
+          'hadoop/buildhadoop',
         ]
       },
       {
         type: 'category',
         label: 'HBase',
         items: [
-          'hbase/buildhbase'
+          'hbase/buildhbase',
         ]
       },
       {
         type: 'category',
         label: 'Ozone',
         items: [
-          'ozone/buildozone'
+          'ozone/buildozone',
         ]
       },
       {
@@ -28,16 +28,16 @@ module.exports = {
         items: [
           'spark/pysspark',
           'spark/rrd',
-          'spark/spark_mllib/linear_method'
+          'spark/spark_mllib/linear_method',
         ]
       },
       {
         type: 'category',
         label: 'Zookeeper',
         items: [
-          'zookeeper/buildzookeeper'
+          'zookeeper/buildzookeeper',
         ]
-      }
+      },
     ],
     'Machine Learning': [
       {
@@ -46,16 +46,16 @@ module.exports = {
         items: [
           {
             type: 'category',
-            lablel: 'kaggle',
+            label: 'kaggle',
             items: [
               'pytorch/kaggle/cancer',
               'pytorch/kaggle/datasciencelondon',
-              'pytorch/kaggle/mnist'
+              'pytorch/kaggle/mnist',
             ]
           },
           {
             type: 'category',
-            lablel: 'lightning',
+            label: 'lightning',
             items: [
               'pytorch/lightning/mnist',
             ]
@@ -68,7 +68,7 @@ module.exports = {
         items: [
           {
             type: 'category',
-            lablel: 'train',
+            label: 'train',
             items: [
               'ray/train/train_overview',
               'ray/train/train_framework',
@@ -78,9 +78,9 @@ module.exports = {
                 label: 'kaggle',
                 items: [
                   'ray/train/kaggle/cancer',
-                  'ray/train/kaggle/datasciencelondon'
+                  'ray/train/kaggle/datasciencelondon',
                 ]
-              }
+              },
             ]
           }
         ]
