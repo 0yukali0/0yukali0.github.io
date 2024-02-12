@@ -26,9 +26,9 @@ module.exports = {
         type: 'category',
         label: 'Spark',
         items: [
-          'spark/pysspark',
+          'spark/pyspark',
           'spark/rrd',
-          'spark/spark_mllib/linear_method',
+          'spark/spark_mllib/mllib-linear',
         ]
       },
       {
@@ -70,15 +70,14 @@ module.exports = {
             type: 'category',
             label: 'train',
             items: [
-              'ray/train/train_overview',
-              'ray/train/train_framework',
-              'ray/train/train',
+              'ray/train/ray_overview_train',
+              'ray/train/ray_train_framework',
               {
                 type: 'category',
                 label: 'kaggle',
                 items: [
-                  'ray/train/kaggle/cancer',
-                  'ray/train/kaggle/datasciencelondon',
+                  'ray/train/kaggle/cancerwithray',
+                  'ray/train/kaggle/datasciencelondonwithray',
                 ]
               },
             ]

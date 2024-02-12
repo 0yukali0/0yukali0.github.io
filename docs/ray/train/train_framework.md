@@ -1,5 +1,5 @@
 ---
-id: supported_framwork
+id: ray_train_framework
 title: Ray Train支援之framework
 ---
 
