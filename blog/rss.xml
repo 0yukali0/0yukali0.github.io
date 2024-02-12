@@ -2,7 +2,7 @@
 <rss version="2.0">
     <channel>
         <title>Yuteng Chen memo Blog</title>
-        <link>https://0yukali0.github.io/blog/2024-02-13-info-blog-post/blog</link>
+        <link>https://0yukali0.github.io/blog</link>
         <description>Yuteng Chen memo Blog</description>
         <lastBuildDate>Tue, 13 Feb 2024 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
@@ -10,8 +10,8 @@
         <language>tw-cn</language>
         <item>
             <title><![CDATA[2024預定目標]]></title>
-            <link>https://0yukali0.github.io/blog/2024-02-13-info-blog-post/blog/2024/02/13/info-blog-post</link>
-            <guid>https://0yukali0.github.io/blog/2024-02-13-info-blog-post/blog/2024/02/13/info-blog-post</guid>
+            <link>https://0yukali0.github.io/blog/2024/02/13/info-blog-post</link>
+            <guid>https://0yukali0.github.io/blog/2024/02/13/info-blog-post</guid>
             <pubDate>Tue, 13 Feb 2024 00:00:00 GMT</pubDate>
         </item>
     </channel>

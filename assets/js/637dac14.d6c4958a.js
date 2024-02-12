@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunk_0yukali0=self.webpackChunk_0yukali0||[]).push([[121],{1113:l=>{l.exports=JSON.parse('{"permalink":"/blog/2024-02-13-info-blog-post/blog","page":1,"postsPerPage":10,"totalPages":1,"totalCount":1,"blogDescription":"Blog","blogTitle":"Blog"}')}}]);

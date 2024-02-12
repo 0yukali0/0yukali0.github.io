@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>https://0yukali0.github.io/blog/2024-02-13-info-blog-post/blog</id>
+    <id>https://0yukali0.github.io/blog</id>
     <title>Yuteng Chen memo Blog</title>
     <updated>2024-02-13T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
-    <link rel="alternate" href="https://0yukali0.github.io/blog/2024-02-13-info-blog-post/blog"/>
+    <link rel="alternate" href="https://0yukali0.github.io/blog"/>
     <subtitle>Yuteng Chen memo Blog</subtitle>
     <entry>
         <title type="html"><![CDATA[2024預定目標]]></title>
-        <id>https://0yukali0.github.io/blog/2024-02-13-info-blog-post/blog/2024/02/13/info-blog-post</id>
-        <link href="https://0yukali0.github.io/blog/2024-02-13-info-blog-post/blog/2024/02/13/info-blog-post"/>
+        <id>https://0yukali0.github.io/blog/2024/02/13/info-blog-post</id>
+        <link href="https://0yukali0.github.io/blog/2024/02/13/info-blog-post"/>
         <updated>2024-02-13T00:00:00.000Z</updated>
     </entry>
 </feed>
