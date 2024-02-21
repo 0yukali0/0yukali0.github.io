@@ -91,7 +91,7 @@ scp -rq ./ozone s2:/home/user
 sudo mv ozone /opt 
 ``` 
 
-## 各主機跑啟動scm與om
+## 各主機啟動scm與om
 
 ```
 ozone scm --init
