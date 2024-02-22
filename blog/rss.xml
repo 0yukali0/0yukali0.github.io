@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0">
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/">
     <channel>
         <title>Yuteng Chen memo Blog</title>
         <link>https://0yukali0.github.io/blog</link>
@@ -13,6 +13,8 @@
             <link>https://0yukali0.github.io/blog/2024/02/13/info-blog-post</link>
             <guid>https://0yukali0.github.io/blog/2024/02/13/info-blog-post</guid>
             <pubDate>Tue, 13 Feb 2024 00:00:00 GMT</pubDate>
+            <description><![CDATA[今年以Kubernetes生態圈與Hadoop生態圈的工具與操作紀錄為主，AI為輔。]]></description>
+            <content:encoded><![CDATA[<p>今年以Kubernetes生態圈與Hadoop生態圈的工具與操作紀錄為主，AI為輔。</p><h2 class="anchor anchorWithStickyNavbar_LWe7" id="kubernetes生態圈">Kubernetes生態圈<a href="#kubernetes生態圈" class="hash-link" aria-label="Direct link to Kubernetes生態圈" title="Direct link to Kubernetes生態圈">​</a></h2><ol><li>kubeadm建置k8s</li><li>metal-lab配置external IP</li><li>k8s-ingress-controller設定網域轉接</li><li>argocd的CD操作與使用者設定</li><li>Promethues的監聽與數據顯示，以yunikorn為例</li><li>Grafana視覺化Promethues的數據，以及alert rule</li><li>linkerd監控服務流量</li><li>kind虛擬k8s叢集</li></ol><h2 class="anchor anchorWithStickyNavbar_LWe7" id="hadoop生態圈">Hadoop生態圈<a href="#hadoop生態圈" class="hash-link" aria-label="Direct link to Hadoop生態圈" title="Direct link to Hadoop生態圈">​</a></h2><ol><li>Hadoop建置與JAVA程式套用</li><li>yarn操作</li><li>HBase建置與操作</li><li>zookeeper建置與操作</li><li>Ozone建置與操作</li><li>spark與hadoop的互動</li></ol><h2 class="anchor anchorWithStickyNavbar_LWe7" id="6月雅思備考">6月雅思備考<a href="#6月雅思備考" class="hash-link" aria-label="Direct link to 6月雅思備考" title="Direct link to 6月雅思備考">​</a></h2><ol><li>每日bbc bussiness news閱讀</li><li>每日以youtube ST English口說練習</li></ol>]]></content:encoded>
         </item>
     </channel>
 </rss>
