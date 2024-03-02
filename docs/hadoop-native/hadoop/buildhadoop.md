@@ -7,11 +7,11 @@ title: hadoop叢集建立
 ## VM環境
 * Virtualbox
 * ubuntu server 22.04
-* 3節點(1主2奴，bridge)
+* 2節點(1主1奴，bridge)
 /etc/hosts如下
 ```script
-master 192.168.50.170
-slave 192.168.50.171
+s1 192.168.0.170
+s2 192.168.0.171
 ```
 
 ## Java 8 安裝
@@ -83,7 +83,7 @@ export JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-amd64
 <configuration>
     <property>
         <name>fs.defaultFS</name>
-        <value>hdfs://hadoop1:9000</value>
+        <value>hdfs://s1:9000</value>
     </property>
 </configuration>
 ```
@@ -124,9 +124,8 @@ export JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-amd64
 ## 設定主節點與子節點
 #### 更新 etc/hadoop/workers
 ```script
-hadoop1
-hadoop2
-hadoop3
+s1
+s2
 ```
 
 ## 複製hadoop資料夾於各子節點

@@ -6,8 +6,8 @@ title: zookeeper叢集建立
 # Zookeeper多節點安裝
 ## 設定/etc/hosts
 ```script
-master 192.168.50.179
-slave 192.168.50.171
+s1 192.168.0.170
+s2 192.168.0.171
 ```
 
 ## 設定.bashrc
@@ -49,8 +49,8 @@ minSessionTimeout=30000
 
 # zookeeper多節點配置，格式為server.myid=ip:2888:3888
 # myid對應data/myid內容的值
-server.0=master:2888:3888
-server.1=slave:2888:3888
+server.0=s1:2888:3888
+server.1=s2:2888:3888
 ```
 
 ## 建資料夾
