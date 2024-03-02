@@ -5,7 +5,7 @@ title: 2024預定目標
 # 目標
 今年以Kubernetes生態圈與Hadoop生態圈的工具與操作紀錄為主，AI為輔。
 ## Kubernetes生態圈
-1. [Kubeadm建置K8S](docs/kubernetes-native/install.md)
+1. Kubeadm建置K8S
 2. Metal-LB配置external IP
 3. k8s-ingress-controller設定網域轉接
 4. argocd的CD操作與使用者設定
