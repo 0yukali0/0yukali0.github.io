@@ -60,12 +60,13 @@ const config = {
         },
         items: [
           {
-            type: 'docSidebar',
-            sidebarId: 'tutorialSidebar',
-            position: 'left',
-            label: 'Docs',
+            to: '/blog/intro.md',
+            label: '文檔',
           },
-          {to: '/blog', label: 'Blog', position: 'left'},
+          {
+            to: '/blog',
+            label: '部落格',
+          },
           {
             href: 'https://github.com/0yukali0/0yukali0.github.io',
             label: 'GitHub',
