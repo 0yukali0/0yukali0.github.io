@@ -60,8 +60,10 @@ const config = {
         },
         items: [
           {
-            to: '/docs',
-            label: '文檔',
+            type: 'docSidebar',
+            sidebarId: 'tutorialSidebar',
+            position: 'left',
+            label: 'Docs',
           },
           {
             to: '/blog',
