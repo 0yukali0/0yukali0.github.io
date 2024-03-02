@@ -17,8 +17,8 @@ title: 介紹
 
 ## Hadoop生態圈
 1. Hadoop建置與JAVA程式套用
-2. yarn操作
+2. Yarn操作
 3. HBase建置與操作
-4. zookeeper建置與操作
+4. Zookeeper建置與操作
 5. Ozone建置與操作
-6. spark與hadoop的互動
+6. Spark與Hadoop的互動

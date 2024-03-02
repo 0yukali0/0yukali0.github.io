@@ -28,9 +28,6 @@ title: 2024預定目標
 
 ## LeetCode
 
-1.SQL
-https://leetcode.com/studyplan/top-sql-50/
-2面試題
-https://leetcode.com/studyplan/top-interview-150/
-3.pandas
-https://leetcode.com/studyplan/introduction-to-pandas/
+1. [Leetcode SQL Top 50](https://leetcode.com/studyplan/top-sql-50/)
+2. [Leetcode 面試題](https://leetcode.com/studyplan/top-interview-150/)
+3. [Leetcode Pandas練習題](https://leetcode.com/studyplan/introduction-to-pandas/)
