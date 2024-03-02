@@ -5,7 +5,7 @@ title: Metal-LB安裝
 
 # Metal-LB安裝
 LoadBalancer的前提，external IP自動配置
-1. 依據***https://metallb.universe.tf/installation/***安裝後
+1. 遵循[Metal-LB安裝教學步驟](https://metallb.universe.tf/installation/)
 2. 部屬L2Advertisement
 3. 部屬IPAddressPool提供external IP
 

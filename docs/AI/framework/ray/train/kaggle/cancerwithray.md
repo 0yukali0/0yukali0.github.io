@@ -4,9 +4,8 @@ title: Ray分散式訓練-癌症細胞診斷
 ---
 
 # Cancer
-
-## Kaggle URL
-***https://www.kaggle.com/datasets/erdemtaha/cancer-data/data***
+## 資料來源
+[kaggle題目網址](https://www.kaggle.com/datasets/erdemtaha/cancer-data/data)
 
 ## Ray程式碼
 
