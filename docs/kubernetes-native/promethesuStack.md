@@ -16,3 +16,9 @@ helm repo update
 ```
 helm install grafana prometheus-community/kube-prometheus-stack --namespace grafana --create-namespace
 ```
+## LoadBalance服務
+```
+kubectl patch svc grafana -n grafana -p '{"spec": {"type": "LoadBalancer"}}'
+kubectl patch svc grafana-kube-prometheus-st-prometheus -n grafana -p '{"spec": {"type": "LoadBalancer"}}'
+kubectl patch svc grafana-kube-prometheus-st-alertmanager -n grafana -p '{"spec": {"type": "LoadBalancer"}}'
+```

@@ -22,7 +22,7 @@ spec:
 ```
 
 ## IPAddressPool
-當路由IP為192.168.50.1，Mask為24。
+當路由IP為192.168.0.1，Mask為24。
 可以想成未來load balance服務外部IP就對應一台主機即可，即假定有擁有該外部IP的一台主機提供著服務。
 ```
 apiVersion: metallb.io/v1beta1
@@ -33,7 +33,7 @@ metadata:
 spec:
   addresses:
   # 可分配的 IP 地址,可以指定多个，包括 ipv4、ipv6
-  - 192.168.50.170-192.168.50.180
+  - 192.168.0.170-192.168.0.180
 ```
 
 ## 預期畫面
