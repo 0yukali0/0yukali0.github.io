@@ -60,7 +60,7 @@ const config = {
         },
         items: [
           {
-            to: '/blog/intro.md',
+            to: '/docs/intro.md',
             label: '文檔',
           },
           {
