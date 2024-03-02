@@ -6,8 +6,8 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'Yuteng Chen memo',
-  tagline: 'learning',
+  title: '騰的學習筆記網站',
+  tagline: '更新Ray、Kubernetes生態系、Hadoop生態系',
   //favicon: 'img/favicon.ico',
 
   url: 'https://0yukali0.github.io',
@@ -86,7 +86,7 @@ const config = {
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+        copyright: `${new Date().getFullYear()} Yuteng memo. Built with Docusaurus.`,
       },
       prism: {
         theme: lightCodeTheme,
