@@ -25,3 +25,12 @@ title: 2024預定目標
 ## 6月雅思備考
 1. 每日bbc bussiness news閱讀
 2. 每日以youtube ST English口說練習
+
+## LeetCode
+
+1.SQL
+https://leetcode.com/studyplan/top-sql-50/
+2面試題
+https://leetcode.com/studyplan/top-interview-150/
+3.pandas
+https://leetcode.com/studyplan/introduction-to-pandas/

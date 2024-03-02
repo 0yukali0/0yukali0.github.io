@@ -61,7 +61,7 @@ spec:
 ```
 192.168.50.171 argocd.example.com
 ```
-因此瀏覽器輸入http://argocd.example.com，便會找Ingress-controller並轉接到argocd服務了。
+因此瀏覽器輸入***http://argocd.example.com***，便會找Ingress-controller並轉接到argocd服務了。
 
 ## 獲取admin密碼並更新密碼
 ```
