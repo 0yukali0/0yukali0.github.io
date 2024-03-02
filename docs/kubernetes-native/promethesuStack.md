@@ -22,3 +22,9 @@ kubectl patch svc grafana -n grafana -p '{"spec": {"type": "LoadBalancer"}}'
 kubectl patch svc grafana-kube-prometheus-st-prometheus -n grafana -p '{"spec": {"type": "LoadBalancer"}}'
 kubectl patch svc grafana-kube-prometheus-st-alertmanager -n grafana -p '{"spec": {"type": "LoadBalancer"}}'
 ```
+## 預期畫面
+1. Grafana網址 http://192.168.0.171
+2. Prometheus網址 http://192.168.0.172:9090
+3. AlertManager網址 http://192.168.0.173:9093
+
+![Prometheus stack](/img/loadBlanacerGrafanaAndPrometheus.png)
