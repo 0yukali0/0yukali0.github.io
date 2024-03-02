@@ -1,6 +1,6 @@
 ---
-id: argocdbuild
-title: ArgoCD安裝
+id: prometheusStack
+title: Prometheus stack安裝
 ---
 
 # prometheus與grafana
