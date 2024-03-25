@@ -1,6 +1,6 @@
 ---
 id: golangHero
-title: Golang之英雄之路
+title: Golang之英雄路
 ---
 
 # Golang的英雄之路
