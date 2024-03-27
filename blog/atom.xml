@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://0yukali0.github.io/blog</id>
     <title>騰的學習筆記網站 Blog</title>
-    <updated>2024-03-27T10:43:41.000Z</updated>
+    <updated>2024-03-27T10:46:43.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://0yukali0.github.io/blog"/>
     <subtitle>騰的學習筆記網站 Blog</subtitle>
@@ -10,7 +10,7 @@
         <title type="html"><![CDATA[2024預定目標]]></title>
         <id>https://0yukali0.github.io/blog/tragets</id>
         <link href="https://0yukali0.github.io/blog/tragets"/>
-        <updated>2024-03-27T10:43:41.000Z</updated>
+        <updated>2024-03-27T10:46:43.000Z</updated>
         <summary type="html"><![CDATA[今年以Kubernetes生態圈與Hadoop生態圈的工具與操作紀錄為主，AI為輔。]]></summary>
         <content type="html"><![CDATA[<p>今年以Kubernetes生態圈與Hadoop生態圈的工具與操作紀錄為主，AI為輔。</p><h2 class="anchor anchorWithStickyNavbar_LWe7" id="kubernetes生態圈">Kubernetes生態圈<a href="#kubernetes生態圈" class="hash-link" aria-label="Direct link to Kubernetes生態圈" title="Direct link to Kubernetes生態圈">​</a></h2><ol><li>Kubeadm建置K8S</li><li>Metal-LB配置external IP</li><li>k8s-ingress-controller設定網域轉接</li><li>argocd的CD操作與使用者設定</li><li>Promethues的監聽與數據顯示，以yunikorn為例</li><li>Grafana視覺化Promethues的數據，以及alert rule</li><li>linkerd監控服務流量</li><li>kind虛擬k8s叢集</li></ol><h2 class="anchor anchorWithStickyNavbar_LWe7" id="hadoop生態圈">Hadoop生態圈<a href="#hadoop生態圈" class="hash-link" aria-label="Direct link to Hadoop生態圈" title="Direct link to Hadoop生態圈">​</a></h2><ol><li>Hadoop建置與JAVA程式套用</li><li>yarn操作</li><li>HBase建置與操作</li><li>zookeeper建置與操作</li><li>Ozone建置與操作</li><li>spark與hadoop的互動</li></ol><h2 class="anchor anchorWithStickyNavbar_LWe7" id="6月雅思備考">6月雅思備考<a href="#6月雅思備考" class="hash-link" aria-label="Direct link to 6月雅思備考" title="Direct link to 6月雅思備考">​</a></h2><ol><li>每日bbc bussiness news閱讀</li><li>每日以youtube ST English口說練習</li></ol><h2 class="anchor anchorWithStickyNavbar_LWe7" id="leetcode">LeetCode<a href="#leetcode" class="hash-link" aria-label="Direct link to LeetCode" title="Direct link to LeetCode">​</a></h2><ol><li><a href="https://leetcode.com/studyplan/top-sql-50/" target="_blank" rel="noopener noreferrer">Leetcode SQL Top 50</a></li><li><a href="https://leetcode.com/studyplan/top-interview-150/" target="_blank" rel="noopener noreferrer">Leetcode 面試題</a></li><li><a href="https://leetcode.com/studyplan/introduction-to-pandas/" target="_blank" rel="noopener noreferrer">Leetcode Pandas練習題</a></li></ol>]]></content>
     </entry>
