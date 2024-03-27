@@ -24,4 +24,5 @@ fruits.insert(2, "berry") # expext be ["apple", "banana", "berry", "cherry"]
 fruits.append("orange")
 # 可塞list, set等等iterable object
 fruits.extend(["mango", "pineapple", "papaya"])
+fruits.remove("berry") # fruits.pop(2)
 ```
