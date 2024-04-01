@@ -103,4 +103,4 @@ spec:
 'kubectl edit gateway -n kubeflow kubeflow-gateway' 將HTTP改為HTTPS，Port改用443
 
 ## 暴露istio服務
-kubectl port-forward svc/istio-ingressgateway -n istio-system 8080:443 --address='0.0.0.0'
+kubectl port-forward svc/istio-ingressgateway -n istio-system 8080:80 --address='0.0.0.0'
