@@ -22,6 +22,7 @@ kubectl apply -f local-path-storage.yaml
 ```
 ## kustmize安裝
 ```
+mkdir kustmize && cd kustmize
 curl -s "https://raw.githubusercontent.com/kubernetes-sigs/kustomize/master/hack/install_kustomize.sh"  | bash
 ```
 
@@ -31,8 +32,8 @@ PATH=$PATH:/home/user/kustmize
 ```
 ## kubeflow 1.8安裝
 ```
-git clone https://github.com/kubeflow/manifests.git -b v1.8.0
-cd manifests
+mkdir kubeflow && cd kubeflow
+git clone https://github.com/kubeflow/manifests.git -b v1.8.0 && cd manifests
 
 kustomize build common/cert-manager/cert-manager/base | kubectl apply -f -
 kubectl wait --for=condition=ready pod -l 'app in (cert-manager,webhook)' --timeout=180s -n cert-manager
