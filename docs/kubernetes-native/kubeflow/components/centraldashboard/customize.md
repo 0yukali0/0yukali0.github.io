@@ -4,6 +4,7 @@ title: Kubeflow UI自訂
 ---
 
 # kubeflow links種類
+調整連接，修改[kubeflow UI格式](https://github.com/kubeflow/manifests/blob/v1.8.0/apps/centraldashboard/upstream/base/configmap.yaml)便可。
 ## 通往叢集外部之連結
 ### external links
 * `type`: "item"
