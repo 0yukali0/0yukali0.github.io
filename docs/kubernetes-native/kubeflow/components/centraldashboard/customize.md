@@ -11,7 +11,7 @@ title: Kubeflow UI自訂
 * `text`: <連結名稱>
 * `url`: <連接>
 * [icon](https://github.com/PolymerElements/iron-icons)
-    * 格式為<module>:<id>，如`social:mood`
+
 ### doc links
 * `text`: <連接名稱>
 * `desc`: <此連結描述>
@@ -31,6 +31,7 @@ title: Kubeflow UI自訂
 需建立新的istio VirtualService與現有的kubeflow/kubeflow-gateway綁定(也就是在kubeflow安裝時的istio gateway)。
 
 :::
+
 ### Istio CRD VirtualService
 ```yaml
 apiVersion: networking.istio.io/v1alpha3
