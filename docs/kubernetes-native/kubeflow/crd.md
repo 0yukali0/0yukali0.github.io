@@ -5,7 +5,7 @@ title: kubeflow CRD簡介
 
 # Kubeflow CRD一覽與簡介
 ## Profile
-[Profile CRD定義](https://github.com/kubeflow/kubeflow/blob/master/components/profile-controller/config/crd/bases/kubeflow.org_profiles.yaml)，apiversion有v1與v1beta1。
+[Profile CRD定義](https://github.com/kubeflow/kubeflow/blob/master/components/profile-controller/config/crd/bases/kubeflow.org_profiles.yaml)，apiversion有`v1`與`v1beta1`。
 * [owner](https://github.com/kubeflow/kubeflow/blob/master/components/profile-controller/config/crd/bases/kubeflow.org_profiles.yaml#L37-L63)
 * [plugins](https://github.com/kubeflow/kubeflow/blob/master/components/profile-controller/config/crd/bases/kubeflow.org_profiles.yaml#L68-L84)
 * [resourceQuotaSpec](https://github.com/kubeflow/kubeflow/blob/master/components/profile-controller/config/crd/bases/kubeflow.org_profiles.yaml#L88-L146)
@@ -17,6 +17,6 @@ title: kubeflow CRD簡介
 
 :::note
 
-Profile實體不會同步於Dex使用者清單，需自行添加，[步驟](https://github.com/kubeflow/manifests/tree/master?tab=readme-ov-file#change-default-user-password)
+Profile實體不會同步於Dex使用者清單，需自行添加，[可見操作步驟](https://github.com/kubeflow/manifests/tree/master?tab=readme-ov-file#change-default-user-password)
 
 :::
