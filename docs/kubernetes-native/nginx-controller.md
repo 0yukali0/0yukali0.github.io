@@ -10,7 +10,7 @@ title: nginxController安裝
 kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.8.2/deploy/static/provider/cloud/deploy.yaml
 ```
 ## 相關案例
-1. [Prometheus-stack設定](kubernetes-native\monitor\promethesuStack.md)
+1. [Prometheus-stack設定](kubernetes-native\promethesuStack.md)
 2. [ArgoCD設定](kubernetes-native\gitops\argocd\install.md)
 3. Jenkins設定
 4. Linkerd設定
