@@ -1,4 +1,9 @@
 DOCKER = docker
+.PHONY: build
+build:
+	@echo "build node pkg"
+	npm ci && npm run build
+
 .PHONY: image
 image:
 	@echo "build image"
