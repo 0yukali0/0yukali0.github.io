@@ -4,7 +4,7 @@
         <title>騰的學習筆記網站 Blog</title>
         <link>https://0yukali0.github.io/blog</link>
         <description>騰的學習筆記網站 Blog</description>
-        <lastBuildDate>Sun, 08 Sep 2024 15:08:00 GMT</lastBuildDate>
+        <lastBuildDate>Sun, 08 Sep 2024 15:10:25 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>tw-cn</language>
@@ -12,7 +12,7 @@
             <title><![CDATA[2024預定目標]]></title>
             <link>https://0yukali0.github.io/blog/tragets</link>
             <guid>https://0yukali0.github.io/blog/tragets</guid>
-            <pubDate>Sun, 08 Sep 2024 15:08:00 GMT</pubDate>
+            <pubDate>Sun, 08 Sep 2024 15:10:25 GMT</pubDate>
             <description><![CDATA[Kubernetes生態圈]]></description>
             <content:encoded><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="kubernetes生態圈">Kubernetes生態圈<a href="#kubernetes生態圈" class="hash-link" aria-label="Direct link to Kubernetes生態圈" title="Direct link to Kubernetes生態圈">​</a></h2><ol><li>Spark python in kubernetes</li><li>Ray</li><li>flyte</li></ol><h2 class="anchor anchorWithStickyNavbar_LWe7" id="ray">Ray<a href="#ray" class="hash-link" aria-label="Direct link to Ray" title="Direct link to Ray">​</a></h2><ol><li>Core</li><li>Data</li><li>Train</li><li>Tune</li><li>Serve</li></ol><h2 class="anchor anchorWithStickyNavbar_LWe7" id="11月雅思備考">11月雅思備考<a href="#11月雅思備考" class="hash-link" aria-label="Direct link to 11月雅思備考" title="Direct link to 11月雅思備考">​</a></h2><ol><li>每日bbc bussiness news閱讀</li><li>每日以youtube ST English口說練習</li></ol><h2 class="anchor anchorWithStickyNavbar_LWe7" id="leetcode">LeetCode<a href="#leetcode" class="hash-link" aria-label="Direct link to LeetCode" title="Direct link to LeetCode">​</a></h2><ol><li><a href="https://leetcode.com/studyplan/top-sql-50/" target="_blank" rel="noopener noreferrer">Leetcode SQL Top 50</a></li><li><a href="https://leetcode.com/studyplan/top-interview-150/" target="_blank" rel="noopener noreferrer">Leetcode 面試題</a></li><li><a href="https://leetcode.com/studyplan/introduction-to-pandas/" target="_blank" rel="noopener noreferrer">Leetcode Pandas練習題</a></li></ol>]]></content:encoded>
         </item>
