@@ -6,7 +6,7 @@ title: Ray core介紹
 # Ray Core
 一般來說，如果你是直接跑python範例，範例裡的**ray.init()**
 1. **Tasks**為Ray平行的非同步函數包裝。
-2. **Actors**為Task類似，為class等級的stateful worker。
+2. **Actors**與Task類似，為class等級的stateful worker。
 當你使用vm、k8s來建立ray cluster時，就需要遠端提交的方法，也就是**@remote**
 1. **Objects**為**Task**與**Actors**在Ray cluster統一interface，只要在ray裡你都能找到。
 2. **Placement groups**為Tasks與actors在ray cluster的排程機制，主要用於gang scheduling
