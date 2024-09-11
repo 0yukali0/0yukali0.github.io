@@ -56,6 +56,18 @@ class threadActor:
     def f(self):
         for i in range(5):
             yield i
+
+actor = Actor.remote()
+for ref in actor.f.remote():
+    print(ray.get(ref))
+
+actor = AsyncActor.remote()
+for ref in actor.f.remote():
+    print(ray.get(ref))
+
+actor = ThreadedActor.remote()
+for ref in actor.f.remote():
+    print(ray.get(ref))
 # 當沒用或不繼續generator記得刪
 # gen = threadActor.remote()
 # del gen
@@ -109,3 +121,32 @@ while unready:
         else:
             result.append(ray.get(r))
 ```
+## Actors
+Actor可以丟入Task，建立多個Object指向同一Actor，平行運行。
+以下為官方範例，每秒Actor的value+3。
+```python
+import ray
+import time
+@ray.remote(num_cpus=2)
+class Counter:
+    def __init__(self):
+        self.value = 0
+    def increment(self):
+        self.value += 1
+        return self.value
+    def get_counter(self):
+        return self.value
+
+@ray.remote
+def f(counter):
+    for _ in range(10):
+        time.sleep(1)
+        counter.increment.remote() # call class func
+
+counter = Counter.remote() # call class
+[f.remote(counter) for _ in range(3)] #每秒+3
+for _ in range(10):
+    time.sleep(0.1)
+    print(ray.get(counter.get_counter.remote()))
+```
+Actor使用**generator**或**cancel**可以回頭看上個章節。
