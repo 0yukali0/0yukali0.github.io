@@ -45,3 +45,61 @@ var _ = Describe("Books", func() {
   })
 })
 ```
+## Writing specs
+用於描寫你預期與結果比較的地方，為階層底層。
+1. **It** 描述要比較甚麼
+2. **BeforeEach**每個同階層nodes的初始化 
+於是乎，一個最底層container node通常會是BeforeEach與It組程。
+體感跟單元測試是差不多的。
+```golang
+var _ = Describe("Books", func() {
+  var book *books.Book
+  BeforeEach(func() {
+    book = &books.Book{
+      Title: "Les Miserables",
+      Author: "Victor Hugo",
+      Pages: 2783,
+    }
+    Expect(book.IsValid()).To(BeTrue())
+  })
+
+  It("can extract the author's last name", func() {
+    Expect(book.AuthorLastName()).To(Equal("Hugo"))
+  })
+
+  It("can fetch a summary of the book from the library service", func(ctx SpecContext) {
+    summary, err := library.FetchSummary(ctx, book)
+    Expect(err).NotTo(HaveOccurred())
+    Expect(summary).To(ContainSubstring("Jean Valjean"))
+  }, SpecTimeout(time.Second))
+})
+```
+當有更高層的測試要求時，Container間的階層就是好方法，比如測k8s namespace中的deployment與pod時。便1st container提供namespace初始化，2st測試deployment與pod這樣。
+```golang
+var _ = Describe("k8s test", func() {
+   BeforeEach(func() {
+     // namespace init
+     // deloyment
+   })
+   Describe("Is deployment right", func() {
+      BeforeEach(func() {
+        // TODO
+      })
+      Context("Is status ready", func() {
+         BeforeEach(func() {
+          // TODO
+         })
+        It("get pod", func(){ 
+          //TODO 
+        })
+        It("check pod infog", func(){
+          //TODO
+        })
+      })
+    // TODO
+   })
+   Describe("Is pod metadata right", func() {
+    // TODO
+   })
+})
+```
