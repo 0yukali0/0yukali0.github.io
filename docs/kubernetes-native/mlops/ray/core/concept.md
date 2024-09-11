@@ -143,10 +143,31 @@ def f(counter):
         time.sleep(1)
         counter.increment.remote() # call class func
 
-counter = Counter.remote() # call class
+counter = Counter.options(name="demo").remote() # call class
 [f.remote(counter) for _ in range(3)] #每秒+3
 for _ in range(10):
     time.sleep(0.1)
     print(ray.get(counter.get_counter.remote()))
 ```
 Actor使用**generator**或**cancel**可以回頭看上個章節。
+而要區分各個actors時，可以透過**name**與**namespace**，ray cluster其中actor對應的name、namespace。
+把actor當成pod，ray cluster當成namespace就好。
+建立時使用**options**來建立或獲取既有actor。
+透過**get_actor**指定name與namesapce來獲取。
+```python
+import ray
+@ray.remote
+class Actor:
+  pass
+
+ray.init(address="auto", namespace="colors")
+Actor.options(name="orange", lifetime="detached").remote()
+ray.init(address="auto", namespace="fruit")
+ray.get_actor("orange")
+ray.init(address="auto", namespace="colors")
+ray.get_actor("orange")
+
+# 當想獲取其他ray cluster的actor時，需要namespace指定。
+ray.get_actor("orange", namespace="fruit")
+Actor.options(name="g1", get_if_exists=True).remote()
+```
