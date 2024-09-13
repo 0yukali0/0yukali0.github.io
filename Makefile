@@ -8,3 +8,6 @@ build:
 image:
 	@echo "build image"
 	$(DOCKER) build -t demo:test -f docker/Dockerfile .
+.PHONY: run
+run:
+	docker run -p 30000:3000 demo:test

@@ -7,9 +7,9 @@ title: Go E2E 快速入門
 1. container nodes
 2. setup nodes，
 3. subject nodes
-**container nodes**可以疊層，**Describe**與**context**屬於此類，包含container、setup與subject。
+**container nodes**可以疊層，**Describe**、**When**與**context**屬於此類，包含container、setup與subject。
 **setup nodes**負責建立測試用資料或前置準備，**BeforeEach**會幫每個container nodes準備好。
-**subject nodes**則是等價於assert的驗證，如**It**。
+**subject nodes**則是等價於assert的驗證，如**It**，通常引用**assert**、**Eqaul**。
 可以透過官方範例發現以下三部分
 ```golang
 var _ = Describe("Books", func() {
@@ -48,7 +48,7 @@ var _ = Describe("Books", func() {
 ## Writing specs
 用於描寫你預期與結果比較的地方，為階層底層。
 1. **It** 描述要比較甚麼
-2. **BeforeEach**每個同階層nodes的初始化 
+2. **BeforeEach**每個同階層nodes的初始化
 於是乎，一個最底層container node通常會是BeforeEach與It組程。
 體感跟單元測試是差不多的。
 ```golang
@@ -103,3 +103,62 @@ var _ = Describe("k8s test", func() {
    })
 })
 ```
+同樣的，當有多數測試使用相同namespace時，在**container nodes**使用**BeforeEach**時順便使用**It**檢查，但這會出現多處foreach使用相同檢測或共用部分，過於冗於。
+```golang
+Describe("scheduling policy test in k8s", func(){
+  Describe("binbacking scheduling", func(){
+    BeforeEach(func(){
+        meta = "data0"
+        ns = rest.createns(meta)
+        It("test namespace create alively", func(){
+          // TODO
+        })
+    })
+  })
+  Describe("fairing scheduling", func(){
+    BeforeEach(func(){
+      meta = "data1"
+      ns = rest.createns(meta)
+      It("test same namespace again!", func(){
+        // TODO
+      })
+    })
+  })
+}) 
+```
+透過**JustBeforeEach**將ns = rest.Createns(meta)共享給每個**BeforeEach**，如下。
+```golang
+JustBeforeEach(func(){
+  ns rest.Createns(meta)
+  It("test namespace create!", func(){})
+})
+  Describe("bin", func(){
+    BeforeEach(func{
+      meta = "data0"
+    })
+    //TODO
+  })
+  Describe("fair", func(){
+    BeforeEach(func{
+      meta = "data1"
+    })
+    //TODO
+  })
+```
+那目前透過***BeforeEach**與**JustBeforeEach**設定前置作業，事後處理也要做。
+透過**AfterEach**來描述測驗後回復動作。
+```golang
+Describe("test with env", func(){
+  AfterEach("unset env", func(){
+    Os.UnsetEnv("DEMOENV")
+  })
+  Describe("set env", func(){
+    BeforeEach("Set env", func(){
+      env = os.SetEnv("DEMOENV", "test")
+    })
+    // TODO
+    It("assert when adopting env", func(){})
+  })
+})
+```
+Next to Do is DeferCleanup
