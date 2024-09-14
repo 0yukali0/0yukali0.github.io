@@ -9,20 +9,20 @@ title: Kubeflow UI自訂
 ### external links
 * `type`: "item"
 * `iframe`: false
-* `text`: <連結名稱>
-* `url`: <連接>
+* `text`: 連結名稱
+* `url`: 連接
 * [icon](https://github.com/PolymerElements/iron-icons)
 
 ### doc links
-* `text`: <連接名稱>
-* `desc`: <此連結描述>
-* `link`: <連接>
+* `text`: 連接名稱
+* `desc`: 此連結描述
+* `link`: 連接
 
 ## 通往叢集內部之連結
 ### menu links
-* `type`: "item"
-* `link`: <istio轉跳路徑>
-* `text`: <連接名稱>
+* `type`: item
+* `link`: istio轉跳路徑
+* `text`: 連接名稱
 * [icon](https://github.com/PolymerElements/iron-icons)
 
 當`link`為`/my-app/`，意味透過瀏覽器輸入網址預期為`http://<KUBEFLOW_ISTIO_GATEWAY_IP>/my-app/`。<br/>

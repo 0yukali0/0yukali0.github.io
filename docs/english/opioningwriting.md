@@ -1,5 +1,5 @@
 ---
-id: opinionWriting
+id: opinion_write
 title: 英文意見寫作 Opinion writing
 ---
 

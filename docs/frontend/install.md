@@ -1,5 +1,5 @@
 ---
-id: angularInstall
+id: installation
 title: Angular 安裝
 ---
 

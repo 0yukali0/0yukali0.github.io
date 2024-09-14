@@ -1,5 +1,5 @@
 ---
-id: golangBase
+id: golang_getstarted
 title: Golang基本
 ---
 
@@ -7,7 +7,7 @@ title: Golang基本
 簡單說明[Golang基礎範例](https://gobyexample.com/)的功能。
 ## 基本
 ### 變數、常數與指標
-```
+```golang
 // 常數宣告
 const s string = "constant"
 
@@ -33,7 +33,7 @@ func main() {
 }
 ```
 ### For迴圈
-```
+```golang
 func main() {
     // 使用 i++ 達到
     for i := 0; i < 3; i++ { fmt.Println(i) }
@@ -44,7 +44,7 @@ func main() {
 }
 ```
 ### If與Swith
-```
+```golang
 // if, else if, else if, ...., else
 if num := 9; num < 0 {
     fmt.Println(num, "is negative")
@@ -76,7 +76,7 @@ whatAmI := func(i interface{}) {
     }
 ```
 ### Arrays與Slices
-```
+```golang
 // Array基本用法
 nums := [5]int{1,2,3,4,5}
 for idx, val := range nums { fmt.Println(val) }
@@ -86,7 +86,7 @@ chars := []string("H", "e", "l", "l", "o", "World")
 hello := chars[:len(chars)-1]
 ```
 ### Maps
-```
+```golang
 // 創建
 m := map[string]int{"k1": 1, "k2": 2}
 // 除去特定key
@@ -107,7 +107,7 @@ for key, val := range m {
 clear(m)
 ```
 ### 函數與變數
-```
+```golang
 func plus(a, b int) int {
     return a + b
 }
@@ -136,7 +136,7 @@ func main() {
 }
 ```
 ### 函數參數:伸縮變數
-```
+```golang
 func sum(nums ...int) {
     fmt.Print(nums, " ")
     total := 0
@@ -156,7 +156,7 @@ func main() {
 }
 ```
 ### 匿名函數的封閉性(Closure of Anonymous function)
-```
+```golang
 func intSeq() func() int {
     i := 0
     return func() int {
@@ -169,7 +169,7 @@ nextInt := intSeq()
 newInts := intSeq()
 ```
 ### 結構、函數與介面
-```
+```golang
 type geometry interface {
     area() float64
     perim() float64
@@ -200,7 +200,7 @@ func (c *circle) perim() float64 {
 
 ```
 ### Json
-```
+```golang
 import (
     "encoding/json"
     "fmt"
@@ -262,7 +262,7 @@ func main() {
 }
 ```
 ### XML
-```
+```golang
 import (
     "encoding/xml"
     "fmt"
