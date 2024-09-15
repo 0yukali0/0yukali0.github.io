@@ -18,6 +18,11 @@ const sidebars: SidebarsConfig = {
       label: 'english',
       items: ['english/opinion_write'],
     },
+    {
+      type: 'category',
+      label: 'ray',
+      items: ['kubernetes-native/mlops/ray/core/ray_core_concept'],
+    },
   ]
 };
 

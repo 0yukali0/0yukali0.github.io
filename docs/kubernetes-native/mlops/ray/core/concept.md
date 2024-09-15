@@ -154,6 +154,7 @@ Actor使用**generator**或**cancel**可以回頭看上個章節。
 把actor當成pod，ray cluster當成namespace就好。
 建立時使用**options**來建立或獲取既有actor。
 透過**get_actor**指定name與namesapce來獲取。
+不同的**driver**(多個rayjob)共享同一actor則透過將actor lifecycle設為**detached**。
 ```python
 import ray
 @ray.remote
@@ -161,13 +162,59 @@ class Actor:
   pass
 
 ray.init(address="auto", namespace="colors")
-Actor.options(name="orange", lifetime="detached").remote()
+Actor.options(name="orange", lifetime="detached").remote() 
 ray.init(address="auto", namespace="fruit")
-ray.get_actor("orange")
+ray.get_actor("orange2")
 ray.init(address="auto", namespace="colors")
 ray.get_actor("orange")
 
 # 當想獲取其他ray cluster的actor時，需要namespace指定。
-ray.get_actor("orange", namespace="fruit")
-Actor.options(name="g1", get_if_exists=True).remote()
+ray.get_actor("orange2", namespace="fruit")
+a = Actor.options(name="g1", get_if_exists=True).remote()
+
+# 刪除actor
+ray.kill(a) #cluster delete actor
+a.exit.remote() #manual delete
+```
+### 平行
+python的平行一般被稱為假平行，原因是Global interpreter lock(GIL)限定python code thread量為1。
+後續在await/sync與multipross才得以真平行。
+ray actor平行分兩種，
+1. asyncio(async流)
+2. threading(multiprocess、joblib流)
+::: info
+兩者選一種，不混用。
+混用視為async actor
+:::
+主動
+```python
+import ray
+import asyncio
+@ray.remote
+class AsyncActor:
+    async def start(self):
+        print("start")
+        await asyncio.sleep(2)
+        print("finished")
+
+actor = AsyncActor.remote()
+ray.get([actor.run_concurrent.remote() for _ in range(4)])
+async def monitor(actor):
+    await actor.start().remote()
+
+asyncio.run(async_get())
+```
+被動
+```python
+import ray
+import asyncio
+@ray.remote
+def task()
+    return 1
+# way 1
+ray.wait([task.remote()])
+# way 2 
+async def wait_obj():
+    await asyncio.wait([task.remote()])
+asyncio.run(wait_obj())
 ```
