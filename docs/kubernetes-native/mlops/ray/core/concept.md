@@ -182,11 +182,11 @@ python的平行一般被稱為假平行，原因是Global interpreter lock(GIL)�
 ray actor平行分兩種，
 1. asyncio(async流)
 2. threading(multiprocess、joblib流)
-::: info
+:::info
 兩者選一種，不混用。
 混用視為async actor
 :::
-主動
+asyncio主動
 ```python
 import ray
 import asyncio
@@ -198,13 +198,13 @@ class AsyncActor:
         print("finished")
 
 actor = AsyncActor.remote()
-ray.get([actor.run_concurrent.remote() for _ in range(4)])
+ray.get([actor.run_task.remote() for _ in range(4)])
 async def monitor(actor):
     await actor.start().remote()
 
 asyncio.run(async_get())
 ```
-被動
+asyncio被動
 ```python
 import ray
 import asyncio
@@ -218,3 +218,61 @@ async def wait_obj():
     await asyncio.wait([task.remote()])
 asyncio.run(wait_obj())
 ```
+thread則是透過**options**的**max_concurrency**設定最大平行數
+```
+@ray.remote(concurrency_groups={"io": 2})
+class ThreadedActor:
+    @ray.method(concurrency_group:"hello")
+    def task1(self): print("hello 1")
+a = ThreadedActor.options(max_concurrency=10).remote()
+ray.get([a.task1.remote(), a.task1.remote()])
+```
+其中可設定平行池的thread數量。
+```python
+@ray.remote(concurrency_groups={"io": 2, "compute": 4})
+class AsyncIOActor:
+    def __init__(self):
+        pass
+    @ray.method(concurrency_group="io")
+    async def f1(self):
+        pass
+    @ray.method(concurrency_group="compute")
+    async def f2(self):
+        pass
+    async def f3(self):
+        pass
+a.f3.options(concurrency_group="compute").remote()
+```
+### Utils
+1. ActorPool
+2. queue
+使用ActorPool來存放Actor實體並透過map來丟資料處理
+```python
+import ray.util import ActorPool
+@ray.remote
+class Actor:
+    def double(self, n):
+        return n * 2
+pool = ActorPool([Actor.remote(), Actor.remote()])
+gen = pool.map(lambda a, v: a.double.remote(v), [1, 2, 3, 4])
+print(list(gen)) # [2, 4, 6, 8]
+```
+使用Queue存放資料，在Actor或Task中，透過queue.get獲取輸入，後續處理。
+```python
+from ray.util.queue import Queue, Empty
+ray.init()
+queue = Queue(maxsize=100)
+@ray.remote
+def consumer(id, queue):
+    try:
+        while True:
+            next_item = queue.get(block=True, timeout=1)
+            print(f"consumer {id} got work {next_item}")
+    except Empty:
+        pass
+
+[queue.put(i) for i in range(10)]
+consumers = [consumer.remote(id, queue) for id in range(2)]
+```
+## Ray out of band commmunications
+TODO 
