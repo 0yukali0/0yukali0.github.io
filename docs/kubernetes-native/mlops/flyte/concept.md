@@ -119,4 +119,24 @@ completed_execution = remote.wait(execution)
 print(completed_execution.outputs)  # print out the outputs
 ```
 計畫何謂計畫，代表可以在每日或每月執行的計畫。
-flyte支持類似Cronjob的
+flyte支持類似Cronjob的定期作業
+```
+# 固定時間排成
+from flytekit import LaunchPlan, CranSchedule
+from workflow.example import wf
+launch_plan = LaunchPlan.get_or_create(
+    wf,
+    name="wf_launchPlan",
+    schedule=CronSchedule(schedule="*/1 * * * *"), 
+    default_inputs={"name": "default"},
+)
+# 週期排成
+from datetime import timedelta
+from flytekit import FixedRate
+launch_plan = LaunchPlan.get_or_create(
+    wf,
+    name="wf_launchplan",
+    schedule=FixedRate(duration=timedelta(minutes=1)),
+    default_inputs={"name": "Elmo"},
+)
+```

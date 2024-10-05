@@ -23,6 +23,11 @@ const sidebars: SidebarsConfig = {
       label: 'ray',
       items: ['kubernetes-native/mlops/ray/core/ray_core_concept'],
     },
+    {
+      type: 'category',
+      label: 'flyte',
+      items: ['kubernetes-native/mlops/flyte/flyte_concept'],
+    },
   ]
 };
 

@@ -1,5 +1,5 @@
 ---
-id: ray_overview_train
+id: ray_train_concept
 title: Ray Train大綱
 ---
 
