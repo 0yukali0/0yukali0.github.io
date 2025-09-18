@@ -11,3 +11,8 @@ image:
 .PHONY: run
 run:
 	docker run -p 30000:3000 demo:test
+
+.PHONY: local
+local:
+	npm ci && npm run build
+	npm run serve

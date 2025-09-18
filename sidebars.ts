@@ -28,6 +28,13 @@ const sidebars: SidebarsConfig = {
       label: 'flyte',
       items: ['kubernetes-native/mlops/flyte/flyte_concept'],
     },
+    {
+      type: 'category',
+      label: 'leetcode',
+      items: [
+        "leetcode/203/leetcode_202",
+      ],
+    },
   ]
 };
 
