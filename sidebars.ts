@@ -31,7 +31,7 @@ const sidebars: SidebarsConfig = {
     {
       type: 'category',
       label: 'leetcode',
-      items: ['leetcode/203'],
+      items: ['leetcode/leetcode_203'],
     },
   ]
 };
