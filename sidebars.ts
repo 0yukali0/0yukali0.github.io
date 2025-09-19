@@ -34,6 +34,7 @@ const sidebars: SidebarsConfig = {
       items: [
         'leetcode/leetcode_203',
         `leetcode/leetcode_019`,
+        `leetcode/leetcode_142`,
       ],
     },
   ]
