@@ -31,34 +31,49 @@
 
 <main>
 <h2 id="summary">Summary</h2>
-<p>Open source contributor focused on cloud-native data infrastructure, ML orchestration, and distributed systems. Active contributor to Apache and Flyte ecosystems.</p>
+<p>Apache Yunikorn <strong>PMC Member</strong> and Software Engineer with 1+ years at <strong>ASUS</strong>. Merged <strong>31+ PRs (75 commits)</strong> across Apache Yunikorn and Flyte; led the <strong>v1.3.0 release</strong> and benchmarked scheduling throughput at <strong>204 pods/sec on 2K nodes</strong> (4.2× faster than default scheduler). Core expertise: <strong>Kubernetes observability</strong>, <strong>MLOps</strong> (Flyte, Ray), <strong>GPU monitoring</strong>, distributed tracing (OpenTelemetry), and cloud-native backend development in Go &amp; Python.</p>
 <hr>
-<h2 id="skills">Skills</h2>
-<p><strong>Languages</strong>
-Go, Python, Java, Bash</p>
-<p><strong>Frameworks &amp; Tools</strong>
-Kubernetes, Flyte, Apache Spark, Apache Hadoop, Apache Ozone, HBase, ZooKeeper, Ray, Kubeflow</p>
-<p><strong>Infrastructure</strong>
-GitHub Actions, Docker, Helm, ArgoCD, Prometheus, Grafana, NFS, MetalLB</p>
-<p><strong>Other</strong>
-Hugo, Git, Linux</p>
+<h2 id="technical-skills">Technical Skills</h2>
+<p><strong>Harness Engineering:</strong> Copilot, Antigravity, Claude Code, Openspec, Hook, Skill, MCP</p>
+<p><strong>MLOps:</strong> Flyte, Ray Training, Ray CRD, Dask, Pytorch, Mlflow, ollama, vllm</p>
+<p><strong>Containers &amp; Orchestration:</strong> Docker, Kubernetes (kubeadm, k3d, kind, k3s)</p>
+<p><strong>Backend Development:</strong> Shell Script, Python (FastAPI), Go (httprouter), Memray, RabbitMQ, SQL (Postgres, Dolt), s3 (Minio, Apache Ozone), uv, Ubuntu</p>
+<p><strong>Observability:</strong> Grafana, Prometheus, Loki, Tempo, Jaeger, OpenTelemetry (operator, collector, SDK)</p>
+<p><strong>IaC &amp; CI/CD:</strong> Helm, Pre-commit, Ruff, Makefile, GitHub Actions (Github Act), GitLab CI, ArgoCD, AWS, Azure</p>
+<p><strong>Development:</strong> Unit Testing, Linting, Performance Benchmarking, Documentation</p>
+<p><strong>Security:</strong> Trivy, Bandit</p>
+<hr>
+<h2 id="work-experience">Work Experience</h2>
+<p><strong>ASUS</strong> — Software Engineer      <em>May 2024 – Sep 2025 | Taipei, Taiwan</em></p>
+<ul>
+<li>Architected an end-to-end model deployment pipeline with <strong>RabbitMQ</strong>, enabling reliable async task queuing and decoupling services to support concurrent inference requests at scale.</li>
+<li>Reduced ML service Docker image size by <strong>62%</strong> through multi-stage builds and layer optimization, accelerating initial ML inference deployment speed.</li>
+<li>Built a <strong>GPU utilization monitoring dashboard</strong> with Grafana and Postgres, enabling cross-architecture performance comparison to improve GPU allocation efficiency.</li>
+<li>Integrated distributed tracing across microservices using <strong>OpenTelemetry</strong> (operator + zero-code instrumentation) with Azure Insights export, reducing mean time to diagnose production latency issues.</li>
+<li>Built an <strong>Azure cost-saving service</strong> allowing developers to tag AKS clusters and VMs with scheduled on/off rules, reducing idle resource spend by 10–15%.</li>
+<li>Diagnosed and resolved <strong>memory leaks</strong> in high-density container environments, preventing OOM-induced pod crashes and improving service uptime under peak load.</li>
+<li>Owned cross-team <strong>release coordination</strong> including Helm-based deployments, release process management, and customer notifications prior to production rollouts.</li>
+</ul>
 <hr>
 <h2 id="open-source-experience">Open Source Experience</h2>
-<p><strong>Apache Software Foundation</strong> — Contributor
-<em>Projects: Hadoop, Ozone, HBase, Spark, ZooKeeper</em></p>
+<p><strong>Apache Yunikorn</strong> — PMC Member / Contributor</p>
+<p><em>Cloud-native, high-throughput, fine-grained resource management scheduler — 31+ PRs (75 commits)</em></p>
 <ul>
-<li>Contributed bug fixes, features, and documentation improvements across multiple Apache projects</li>
-<li>Work spans distributed storage (Ozone, HBase), compute (Spark), and coordination (ZooKeeper, Hadoop)</li>
+<li><strong>Release Manager:</strong> Led the v1.3.0 release lifecycle — coordinating changelog, artifact publishing, and community announcements — delivering an on-time, community-ready release.</li>
+<li><strong>Performance:</strong> Benchmarked scheduling throughput at scale: <strong>204 pods/sec on 2K nodes (4.2× faster than default scheduler)</strong> and 115 pods/sec on 4K nodes; presented findings publicly (YouTube) to establish data-driven community baselines.</li>
+<li><strong>Quality Assurance:</strong> Refactored test suites to table-driven style and resolved complex race conditions, improving code coverage and eliminating flaky tests across core scheduling paths.</li>
+<li><strong>Documentation:</strong> Maintained metrics, release, and Docsearch documentation, lowering onboarding friction for new contributors and keeping official references accurate across releases.</li>
 </ul>
-<p><strong>Flyte / flyteorg</strong> — Contributor
-<em>Projects: Flyte, Flyteidl, Flytekit</em></p>
+<p><strong>Flyte</strong> — Contributor</p>
+<p><em>Kubernetes-native workflow automation platform for Data and ML pipelines</em></p>
 <ul>
-<li>Contributed to ML workflow orchestration platform used in production at scale</li>
-<li>Improvements in core runtime, SDK, and documentation</li>
+<li>Fixed critical cluster setup issues including missing Helm charts and kubeconfig permission errors, improving deployment reliability for new users.</li>
+<li>Enhanced <strong>ListRuns</strong> API to surface action details and extended <code>new_remote</code> with <code>file_name</code> parameter support, improving observability and SDK usability for ML pipeline authors.</li>
+<li>Fixed <code>flytectl</code> install script to support version pinning and repaired broken architecture documentation links, reducing friction for new contributors.</li>
 </ul>
 <hr>
 <h2 id="education">Education</h2>
-<p>Bachelor of Engineering — Computer Science</p>
+<p><strong>Taichung University of Education</strong> — Master of Computer Science      <em>2021 – 2023 | Taichung, Taiwan</em></p>
 
 </main>
 

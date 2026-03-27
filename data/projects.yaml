@@ -1,9 +1,14 @@
-- name: "0yukali0.github.io"
-  url: "https://github.com/0yukali0/0yukali0.github.io"
-  description: "Personal portfolio site built with Hugo and hosted on GitHub Pages. Showcases open source contributions, resume, and side projects."
-  tags: ["Hugo", "GitHub Pages", "Go"]
+- name: "ResourceUsageReporter"
+  url: "https://github.com/0yukali0/ResourceUsageReporter"
+  description: "Bridges the gap of real-time node metrics in Kubernetes, enabling schedulers to make more informed placement decisions."
+  tags: ["Kubernetes", "Go", "Metrics"]
 
-- name: "SRE Notes"
-  url: "https://github.com/0yukali0/0yukali0.github.io"
-  description: "Learning notes covering Kubernetes, Hadoop ecosystem, monitoring, and MLOps tools including Ray, Kubeflow, and Flyte."
-  tags: ["Kubernetes", "Hadoop", "MLOps", "Docs"]
+- name: "My-skills"
+  url: "https://github.com/0yukali0/my-skills"
+  description: "Implements agent-invocable skills that submit workflows directly to Kubernetes, enabling Claude and local LLMs to trigger jobs such as web search and model training, ray training."
+  tags: ["Kubernetes", "Claude", "LLM", "Ray", "MLOps"]
+
+- name: "Postgres-metrics-observability"
+  url: "https://github.com/0yukali0/postgres-metrics-observability"
+  description: "Collects Postgres metrics via OpenTelemetry Collector and visualizes DB usage and latency in Grafana, enabling data-driven query tuning and alert configuration."
+  tags: ["Postgres", "OpenTelemetry", "Grafana", "Observability"]
