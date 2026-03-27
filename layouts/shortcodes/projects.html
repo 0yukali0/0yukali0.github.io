@@ -1,0 +1,26 @@
+{{ $projects := site.Data.projects }}
+
+<ul class="project-list">
+  {{ range $projects }}
+  <li class="project-item">
+    <div class="project-name">
+      <a href="{{ .url }}" target="_blank" rel="noopener">{{ .name }}</a>
+    </div>
+    <div class="project-desc">{{ .description }}</div>
+    <div class="project-tags">
+      {{ range .tags }}
+      <span class="tag">{{ . }}</span>
+      {{ end }}
+    </div>
+  </li>
+  {{ end }}
+</ul>
+
+<style>
+.project-list { list-style: none; padding: 0; }
+.project-item { margin-bottom: 1.5rem; border-bottom: 1px solid #eee; padding-bottom: 1rem; }
+.project-name { font-size: 1.1em; font-weight: bold; margin-bottom: 0.25rem; }
+.project-desc { color: #555; margin-bottom: 0.4rem; }
+.project-tags { display: flex; gap: 0.4rem; flex-wrap: wrap; }
+.tag { background: #f0f0f0; color: #333; padding: 0.1rem 0.5rem; border-radius: 3px; font-size: 0.8em; }
+</style>

@@ -1,0 +1,22 @@
+baseURL = "https://0yukali0.github.io/"
+languageCode = "en-us"
+title = "0yukali0"
+theme = "hugo-xmin"
+
+[params]
+  description = "Open source contributor @ Apache & Flyte"
+
+[[menu.main]]
+  name = "Resume"
+  url = "/resume/"
+  weight = 1
+
+[[menu.main]]
+  name = "Contributions"
+  url = "/contributions/"
+  weight = 2
+
+[[menu.main]]
+  name = "Projects"
+  url = "/projects/"
+  weight = 3

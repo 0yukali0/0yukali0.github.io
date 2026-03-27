@@ -1,0 +1,140 @@
+{{ $contributions := site.Data.contributions }}
+
+{{/* Build summary counts by org and category */}}
+{{ $orgs := slice "flyteorg" "apache" }}
+{{ $categories := slice "feature" "bugfix" "docs" "refactor" "test" }}
+
+{{/* Chart data */}}
+{{ $orgCounts := dict }}
+{{ range $orgs }}
+  {{ $org := . }}
+  {{ $count := 0 }}
+  {{ range $contributions }}
+    {{ if eq .org $org }}{{ $count = add $count 1 }}{{ end }}
+  {{ end }}
+  {{ $orgCounts = merge $orgCounts (dict $org $count) }}
+{{ end }}
+
+{{ $catCounts := dict }}
+{{ range $categories }}
+  {{ $cat := . }}
+  {{ $count := 0 }}
+  {{ range $contributions }}
+    {{ if eq .category $cat }}{{ $count = add $count 1 }}{{ end }}
+  {{ end }}
+  {{ $catCounts = merge $catCounts (dict $cat $count) }}
+{{ end }}
+
+<section class="contributions-summary">
+  <h2>Summary</h2>
+  <p>
+    Total merged PRs: <strong>{{ len $contributions }}</strong>
+    &nbsp;|&nbsp;
+    flyteorg: <strong>{{ index $orgCounts "flyteorg" }}</strong>
+    &nbsp;|&nbsp;
+    apache: <strong>{{ index $orgCounts "apache" }}</strong>
+  </p>
+
+  <canvas id="contributionsChart" width="700" height="300" aria-label="PR contributions bar chart" role="img"></canvas>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
+  <script>
+    (function() {
+      var ctx = document.getElementById('contributionsChart');
+      if (!ctx) return;
+      new Chart(ctx, {
+        type: 'bar',
+        data: {
+          labels: [
+            'flyteorg', 'apache',
+            'feature', 'bugfix', 'docs', 'refactor', 'test'
+          ],
+          datasets: [{
+            label: 'Merged PRs',
+            data: [
+              {{ index $orgCounts "flyteorg" }},
+              {{ index $orgCounts "apache" }},
+              {{ index $catCounts "feature" }},
+              {{ index $catCounts "bugfix" }},
+              {{ index $catCounts "docs" }},
+              {{ index $catCounts "refactor" }},
+              {{ index $catCounts "test" }}
+            ],
+            backgroundColor: [
+              '#6c9bd2','#6c9bd2',
+              '#5aab6e','#e07b5a','#a0c4d8','#c9a0dc','#f0c060'
+            ],
+            borderRadius: 4
+          }]
+        },
+        options: {
+          responsive: false,
+          plugins: {
+            legend: { display: false },
+            tooltip: { mode: 'index' }
+          },
+          scales: {
+            x: { grid: { display: false } },
+            y: { beginAtZero: true, ticks: { precision: 0 } }
+          }
+        }
+      });
+    })();
+  </script>
+</section>
+
+{{/* Render PRs grouped by org, then category */}}
+{{ range $orgs }}
+  {{ $org := . }}
+  {{ $orgPRs := slice }}
+  {{ range $contributions }}
+    {{ if eq .org $org }}{{ $orgPRs = append . $orgPRs }}{{ end }}
+  {{ end }}
+  {{ if gt (len $orgPRs) 0 }}
+  <section class="org-group">
+    <h2>{{ $org }}</h2>
+    {{ range $categories }}
+      {{ $cat := . }}
+      {{ $catPRs := slice }}
+      {{ range $orgPRs }}
+        {{ if eq .category $cat }}{{ $catPRs = append . $catPRs }}{{ end }}
+      {{ end }}
+      {{ if gt (len $catPRs) 0 }}
+      <h3>{{ $cat }}</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Pull Request</th>
+            <th>Repo</th>
+            <th>Difficulty</th>
+            <th>Merged</th>
+          </tr>
+        </thead>
+        <tbody>
+          {{ range $catPRs }}
+          <tr>
+            <td><a href="{{ .url }}" target="_blank" rel="noopener">{{ .title }}</a></td>
+            <td>{{ .repo }}</td>
+            <td><span class="badge difficulty-{{ .difficulty }}">{{ .difficulty }}</span></td>
+            <td>{{ .merged_at }}</td>
+          </tr>
+          {{ end }}
+        </tbody>
+      </table>
+      {{ end }}
+    {{ end }}
+  </section>
+  {{ end }}
+{{ end }}
+
+<style>
+.contributions-summary { margin-bottom: 2rem; }
+.org-group { margin-bottom: 2rem; }
+table { border-collapse: collapse; width: 100%; margin-bottom: 1rem; }
+th, td { text-align: left; padding: 0.4rem 0.6rem; border-bottom: 1px solid #ddd; }
+th { font-weight: bold; }
+.badge { display: inline-block; padding: 0.1rem 0.4rem; border-radius: 3px; font-size: 0.8em; }
+.difficulty-easy { background: #d4edda; color: #155724; }
+.difficulty-medium { background: #fff3cd; color: #856404; }
+.difficulty-hard { background: #f8d7da; color: #721c24; }
+</style>

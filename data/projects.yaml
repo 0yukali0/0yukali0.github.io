@@ -1,0 +1,9 @@
+- name: "0yukali0.github.io"
+  url: "https://github.com/0yukali0/0yukali0.github.io"
+  description: "Personal portfolio site built with Hugo and hosted on GitHub Pages. Showcases open source contributions, resume, and side projects."
+  tags: ["Hugo", "GitHub Pages", "Go"]
+
+- name: "SRE Notes"
+  url: "https://github.com/0yukali0/0yukali0.github.io"
+  description: "Learning notes covering Kubernetes, Hadoop ecosystem, monitoring, and MLOps tools including Ray, Kubeflow, and Flyte."
+  tags: ["Kubernetes", "Hadoop", "MLOps", "Docs"]

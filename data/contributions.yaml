@@ -1,0 +1,279 @@
+- title: "Fix problems including missing charts and the kubeconfig permission"
+  url: "https://github.com/flyteorg/flyte/pull/7033"
+  org: flyteorg
+  repo: flyte
+  category: bugfix
+  difficulty: medium
+  merged_at: "2026-03-17"
+
+- title: "[Flyte 6973] Attached action details to ListRuns response"
+  url: "https://github.com/flyteorg/flyte/pull/7026"
+  org: flyteorg
+  repo: flyte
+  category: feature
+  difficulty: medium
+  merged_at: "2026-03-14"
+
+- title: "supporting the file_name parameter in the new_remote function"
+  url: "https://github.com/flyteorg/flyte-sdk/pull/337"
+  org: flyteorg
+  repo: flyte-sdk
+  category: feature
+  difficulty: easy
+  merged_at: "2025-11-17"
+
+- title: "[Bug] support download old version of flytectl by install.sh"
+  url: "https://github.com/flyteorg/flyte/pull/6668"
+  org: flyteorg
+  repo: flyte
+  category: bugfix
+  difficulty: easy
+  merged_at: "2025-10-10"
+
+- title: "[Docs] Fixing the broken link to Architecture Overview in Deployment Guide"
+  url: "https://github.com/flyteorg/flyte/pull/6373"
+  org: flyteorg
+  repo: flyte
+  category: docs
+  difficulty: easy
+  merged_at: "2025-03-25"
+
+- title: "[YUNIKORN-1626] Listing Yunikorn metrics revealed in the prometheus"
+  url: "https://github.com/apache/yunikorn-site/pull/330"
+  org: apache
+  repo: yunikorn-site
+  category: docs
+  difficulty: easy
+  merged_at: "2023-09-10"
+
+- title: "[YUNIKORN-1776] Update roadmap for 1.4"
+  url: "https://github.com/apache/yunikorn-site/pull/314"
+  org: apache
+  repo: yunikorn-site
+  category: docs
+  difficulty: easy
+  merged_at: "2023-06-13"
+
+- title: "[YUNIKORN-1523] Add Chinese translation for release announcement 1.2"
+  url: "https://github.com/apache/yunikorn-site/pull/261"
+  org: apache
+  repo: yunikorn-site
+  category: docs
+  difficulty: easy
+  merged_at: "2023-02-02"
+
+- title: "[YUNIKORN-1512] Adding Chinese translation of Translation"
+  url: "https://github.com/apache/yunikorn-site/pull/259"
+  org: apache
+  repo: yunikorn-site
+  category: docs
+  difficulty: easy
+  merged_at: "2023-02-01"
+
+- title: "[YUNIKORN-1387] Adding Chinese translation of partition and queue configuration"
+  url: "https://github.com/apache/yunikorn-site/pull/218"
+  org: apache
+  repo: yunikorn-site
+  category: docs
+  difficulty: easy
+  merged_at: "2022-11-28"
+
+- title: "[YUNIKORN-1408] Adding Chinese translation of workload/Overview"
+  url: "https://github.com/apache/yunikorn-site/pull/211"
+  org: apache
+  repo: yunikorn-site
+  category: docs
+  difficulty: easy
+  merged_at: "2022-11-17"
+
+- title: "[YUNIKORN-1386] Adding Chinese translation of deployment modes"
+  url: "https://github.com/apache/yunikorn-site/pull/209"
+  org: apache
+  repo: yunikorn-site
+  category: docs
+  difficulty: easy
+  merged_at: "2022-11-16"
+
+- title: "[YUNIKORN-1034] Add Chinese translation for performance documents"
+  url: "https://github.com/apache/yunikorn-site/pull/174"
+  org: apache
+  repo: yunikorn-site
+  category: docs
+  difficulty: easy
+  merged_at: "2022-08-20"
+
+- title: "[YUNIKORN-951] Add perf-tool description into benchmarking tutorial page"
+  url: "https://github.com/apache/yunikorn-site/pull/134"
+  org: apache
+  repo: yunikorn-site
+  category: docs
+  difficulty: easy
+  merged_at: "2022-03-08"
+
+- title: "[YUNIKORN-990] DocSearch Migration"
+  url: "https://github.com/apache/yunikorn-site/pull/129"
+  org: apache
+  repo: yunikorn-site
+  category: feature
+  difficulty: easy
+  merged_at: "2022-02-12"
+
+- title: "[YUNIKORN-845] Publish benchmark result on web-site"
+  url: "https://github.com/apache/yunikorn-site/pull/101"
+  org: apache
+  repo: yunikorn-site
+  category: docs
+  difficulty: medium
+  merged_at: "2021-12-10"
+
+- title: "[YUNIKORN-712] Add license file to the site repo"
+  url: "https://github.com/apache/yunikorn-site/pull/68"
+  org: apache
+  repo: yunikorn-site
+  category: docs
+  difficulty: easy
+  merged_at: "2021-08-02"
+
+- title: "[YUNIKORN-745] Add doc for healthcheck endpoint"
+  url: "https://github.com/apache/yunikorn-site/pull/66"
+  org: apache
+  repo: yunikorn-site
+  category: docs
+  difficulty: easy
+  merged_at: "2021-07-18"
+
+- title: "[YUNIKORN-732] Create the docs release for v0.11"
+  url: "https://github.com/apache/yunikorn-site/pull/65"
+  org: apache
+  repo: yunikorn-site
+  category: docs
+  difficulty: medium
+  merged_at: "2021-07-18"
+
+- title: "[YUNIKORN-750] Website search box returns no result"
+  url: "https://github.com/apache/yunikorn-site/pull/63"
+  org: apache
+  repo: yunikorn-site
+  category: bugfix
+  difficulty: easy
+  merged_at: "2021-07-17"
+
+- title: "[YUNIKORN-701] Add search box to the website"
+  url: "https://github.com/apache/yunikorn-site/pull/62"
+  org: apache
+  repo: yunikorn-site
+  category: feature
+  difficulty: medium
+  merged_at: "2021-07-14"
+
+- title: "[YUNIKORN-878] Add latency metrics to measure tryNode() latency"
+  url: "https://github.com/apache/yunikorn-core/pull/334"
+  org: apache
+  repo: yunikorn-core
+  category: feature
+  difficulty: medium
+  merged_at: "2021-10-24"
+
+- title: "[YUNIKORN-877] Fix the scheduling latency metrics"
+  url: "https://github.com/apache/yunikorn-core/pull/333"
+  org: apache
+  repo: yunikorn-core
+  category: bugfix
+  difficulty: medium
+  merged_at: "2021-10-23"
+
+- title: "[YUNIKORN-838] Improve coverage of allocation_ask.go"
+  url: "https://github.com/apache/yunikorn-core/pull/320"
+  org: apache
+  repo: yunikorn-core
+  category: test
+  difficulty: easy
+  merged_at: "2021-09-07"
+
+- title: "[YUNIKORN-801] Empty user label log should be DEBUG level"
+  url: "https://github.com/apache/yunikorn-k8shim/pull/298"
+  org: apache
+  repo: yunikorn-k8shim
+  category: bugfix
+  difficulty: easy
+  merged_at: "2021-08-21"
+
+- title: "[YUNIKORN-805] Fix race condition on the TestMode flag"
+  url: "https://github.com/apache/yunikorn-k8shim/pull/296"
+  org: apache
+  repo: yunikorn-k8shim
+  category: bugfix
+  difficulty: medium
+  merged_at: "2021-08-19"
+
+- title: "[YUNIKORN-699] replace the UUID library in the shim repo"
+  url: "https://github.com/apache/yunikorn-k8shim/pull/275"
+  org: apache
+  repo: yunikorn-k8shim
+  category: refactor
+  difficulty: easy
+  merged_at: "2021-06-13"
+
+- title: "[YUNIKORN-383] Improve code coverage for application_events.go"
+  url: "https://github.com/apache/yunikorn-k8shim/pull/272"
+  org: apache
+  repo: yunikorn-k8shim
+  category: test
+  difficulty: easy
+  merged_at: "2021-06-02"
+
+- title: "[YUNIKORN-673] Data race in kubeclient_mock"
+  url: "https://github.com/apache/yunikorn-k8shim/pull/268"
+  org: apache
+  repo: yunikorn-k8shim
+  category: bugfix
+  difficulty: medium
+  merged_at: "2021-05-28"
+
+- title: "[YUNIKORN-590] GetPlaceholderTimeoutParam: undefined param is not an error"
+  url: "https://github.com/apache/yunikorn-k8shim/pull/266"
+  org: apache
+  repo: yunikorn-k8shim
+  category: bugfix
+  difficulty: easy
+  merged_at: "2021-05-21"
+
+- title: "[YUNIKORN-591] move TaskGroupInstanceCountMap to its own file"
+  url: "https://github.com/apache/yunikorn-k8shim/pull/264"
+  org: apache
+  repo: yunikorn-k8shim
+  category: refactor
+  difficulty: easy
+  merged_at: "2021-05-18"
+
+- title: "[YUNIKORN-670] Update the e2e test coverage matrix"
+  url: "https://github.com/apache/yunikorn-k8shim/pull/263"
+  org: apache
+  repo: yunikorn-k8shim
+  category: docs
+  difficulty: easy
+  merged_at: "2021-05-15"
+
+- title: "[YUNIKORN-663] Improve log messages in node.go"
+  url: "https://github.com/apache/yunikorn-k8shim/pull/261"
+  org: apache
+  repo: yunikorn-k8shim
+  category: refactor
+  difficulty: easy
+  merged_at: "2021-05-14"
+
+- title: "[YUNIKORN-711] Add license file to the release repo"
+  url: "https://github.com/apache/yunikorn-release/pull/45"
+  org: apache
+  repo: yunikorn-release
+  category: docs
+  difficulty: easy
+  merged_at: "2021-08-02"
+
+- title: "[YUNIKORN-692] Update supported K8s version matrix"
+  url: "https://github.com/apache/yunikorn-release/pull/41"
+  org: apache
+  repo: yunikorn-release
+  category: docs
+  difficulty: easy
+  merged_at: "2021-06-07"
