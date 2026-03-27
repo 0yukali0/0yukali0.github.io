@@ -1,5 +1,6 @@
 ---
-title: "Resume"
+title: "Yuteng Chen"
+type: "resume"
 ---
 
 ## Summary
