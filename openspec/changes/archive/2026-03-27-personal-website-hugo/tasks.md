@@ -43,4 +43,4 @@
 
 - [x] 7.1 Run `hugo server` locally and verify all three pages render correctly
 - [x] 7.2 Push to `main` and confirm GitHub Actions workflow completes successfully
-- [ ] 7.3 Verify live site at `https://0yukali0.github.io` shows Resume, Contributions, and Projects pages
+- [x] 7.3 Verify live site at `https://0yukali0.github.io` shows Resume, Contributions, and Projects pages
